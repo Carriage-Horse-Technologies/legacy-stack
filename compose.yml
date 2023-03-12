@@ -1,0 +1,44 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      TZ: Japan
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-db:/var/lib/mysql
+      - ./mysql/migrations:/docker-entrypoint-initdb.d
+      - /etc/localtime:/etc/localtime:ro
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD=masakari
+      - MYSQL_USER=masakari
+      - MYSQL_PASSWORD=masakari
+      - MYSQL_DATABASE=masakari
+      - TZ=Asia/Tokyo
+  postgres:
+    image: postgres:alpine
+    restart: unless-stopped
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+      - ./postgres/initdb:/docker-entrypoint-initdb.d
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - POSTGRES_USER=masakari
+      - POSTGRES_PASSWORD=masakari
+      - POSTGRES_DB=masakari
+      - TZ=Asia/Tokyo
+volumes:
+  mysql-db:
+  postgres-db:

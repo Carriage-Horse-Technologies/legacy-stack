@@ -23,3 +23,6 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+app/vendor/
+.idea/
+app/smarty/template_compile/
