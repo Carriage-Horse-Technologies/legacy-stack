@@ -1,0 +1,44 @@
+- name: yum updateを実行します
+  become: yes
+  yum:
+    update_cache: yes
+
+- name: Remove installed docker
+  become: yes
+  yum:
+    name:
+      - docker
+      - docker-common
+      - container-selinux
+      - docker-selinux
+      - docker-engine
+    state: absent
+- name: Install yum-utils
+  become: yes
+  yum:
+    name:
+      - yum-utils
+    state: present
+- name: Add docker yum repositry
+  become: yes
+  command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+- name: Enable repo
+  become: yes
+  command: yum-config-manager --enable docker-ce-edge
+- name: Make cache
+  become: yes
+  command: yum makecache fast
+- name: Update
+  become: yes
+  yum:
+    name: "*"
+    state: latest
+- name: Install newest docker
+  become: yes
+  yum:
+    name:
+      - docker-ce
+  notify:
+    - add_user_to_docker_group
+    - restart_docker_daemon
+  changed_when: yes

@@ -1,0 +1,10 @@
+- name: yum updateを実行します
+  become: yes
+  yum:
+    update_cache: yes
+
+- name: Gitのインストールを行います
+  become: yes
+  yum:
+    name: git
+    state: present
