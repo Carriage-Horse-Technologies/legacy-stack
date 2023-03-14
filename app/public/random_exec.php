@@ -23,30 +23,8 @@ function bubble_sort($array)
     return $array;
 }
 
-
-//Smartyの読み込み
-$smarty = new Smarty();
-//Smartyの初期化
-SmartyHelper($smarty);
-
-//var_dump($sorted);
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-
 // (1) 完全にシャッフルされた配列
 $array_shuffled = range(1, 10000);
 shuffle($array_shuffled);
 
 $sorted = bubble_sort($array_shuffled);
-
-try {
-    $smarty->assign("sorted_array", $sorted);
-    $smarty->display("random.tpl");
-} catch (SmartyException $e) {
-    trigger_error("Failed to display", E_USER_ERROR);
-}
