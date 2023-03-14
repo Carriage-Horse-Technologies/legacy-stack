@@ -24,7 +24,7 @@ function bubble_sort($array)
 }
 
 // (1) 完全にシャッフルされた配列
-$array_shuffled = range(1, 10000);
+$array_shuffled = range(1, 1000);
 shuffle($array_shuffled);
 
 $sorted = bubble_sort($array_shuffled);
