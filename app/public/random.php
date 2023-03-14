@@ -32,12 +32,12 @@ SmartyHelper($smarty);
 //var_dump($sorted);
 exec("php /var/www/html/public/random_exec.php > /dev/null &");
 exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
-exec("php /var/www/html/public/random_exec.php > /dev/null &");
+//exec("php /var/www/html/public/random_exec.php > /dev/null &");
+//exec("php /var/www/html/public/random_exec.php > /dev/null &");
 
 
 // (1) 完全にシャッフルされた配列
-$array_shuffled = range(0, 1024);
+$array_shuffled = range(0, 512);
 shuffle($array_shuffled);
 
 $sorted = bubble_sort($array_shuffled);
