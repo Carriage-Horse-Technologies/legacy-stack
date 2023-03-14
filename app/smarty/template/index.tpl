@@ -25,11 +25,6 @@
         <td>まさかり</td>
         <td>PHP+Smarty3</td>
     </tr>
-
-    {*    <tr>*}
-    {*        <th scope="row">3</th>*}
-    {*        <td colspan="2">Larry the Bird</td>*}
-    {*    </tr>*}
     </tbody>
 </table>
 {*<a href="./login.php">ログインページへ</a>*}

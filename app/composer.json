@@ -1,7 +1,7 @@
 {
   "require": {
     "phpstan/phpstan": "^1.9",
-    "smarty/smarty": "^4.3",
+    "smarty/smarty": "^3",
     "twbs/bootstrap": "5.0.2",
     "scssphp/scssphp": "^1.11",
     "guzzlehttp/guzzle": "^7.5",

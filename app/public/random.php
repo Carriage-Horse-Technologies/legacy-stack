@@ -34,9 +34,7 @@ exec("php /var/www/html/public/random_exec.php > /dev/null &");
 exec("php /var/www/html/public/random_exec.php > /dev/null &");
 exec("php /var/www/html/public/random_exec.php > /dev/null &");
 exec("php /var/www/html/public/random_exec.php > /dev/null &");
-//exec("php /var/www/html/public/random_exec.php > /dev/null &"s);
-//exec("php /var/www/html/public/random_exec.php > /dev/null &");
-//exec("php /var/www/html/public/random_exec.php > /dev/null &");
+
 
 // (1) 完全にシャッフルされた配列
 $array_shuffled = range(0, 1024);
