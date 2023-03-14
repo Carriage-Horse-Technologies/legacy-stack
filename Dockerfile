@@ -22,3 +22,4 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN composer install
 
 EXPOSE 80
+。
