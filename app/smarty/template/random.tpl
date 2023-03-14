@@ -11,7 +11,7 @@
 <h2>
     ソート結果
 </h2>
-{$sorted_array}
+{$sorted_array|@debug_print_var}
 {*<a href="./login.php">ログインページへ</a>*}
 </body>
 </html>

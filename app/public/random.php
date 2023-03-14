@@ -32,14 +32,14 @@ SmartyHelper($smarty);
 // 乱数列の作成
 
 // (1) 完全にシャッフルされた配列
-$array_shuffled = range(1, 10000);
+$array_shuffled = range(1, 50000);
 shuffle($array_shuffled);
 
 $sorted = bubble_sort($array_shuffled);
 //var_dump($sorted);
 
 try {
-    $this->smarty->assign("sorted_array", $sorted);
+    $smarty->assign("sorted_array", $sorted);
     $smarty->display("random.tpl");
 } catch (SmartyException $e) {
     trigger_error("Failed to display", E_USER_ERROR);
