@@ -44,6 +44,7 @@
     </tr>
     </tbody>
 </table>
+<a href="https://github.com/Carriage-Horse-Technologies/legacy-stack" class="link-danger fs-2">リポジトリはこちらから、コードを眺めてまさかりを投げろ！</a>
 {*<a href="./login.php">ログインページへ</a>*}
 </body>
 </html>
